@@ -1,4 +1,15 @@
 ﻿//DRY: Don't Repeat Yourself. To make thi text-based adventure a lot of the code will be similar. This could be made into a function, however it will nto seeing as it would reduce nothing replacing a line to save another one or maybe two.
+/*
+To this end i made a function which print dialoge with a specific bacground color, however it was not implemented:
+static void respondToDialog(string textForResponse, ConsoleColor colorOfAmongus)
+{
+    //i wish to make it so that the console color is selected by the input of the 2nd parameter:
+    Console.BackgroundColor = colorOfAmongus;
+    Console.WriteLine(textForResponse);
+}
+respondToDialog("dsdsd0", ConsoleColor.DarkRed);
+
+*/
 Console.ForegroundColor = ConsoleColor.Red;
 Console.BackgroundColor = ConsoleColor.White;
 Console.WriteLine("EMERGENCY MEETING");
