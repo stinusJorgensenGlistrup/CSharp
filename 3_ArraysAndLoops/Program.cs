@@ -5,19 +5,24 @@
 * Alter the examples so you better understand them
 * Create new examples which you can use in the future
 *
-* Before you run the program, try to see if you can deduct 
 * what is written in the console via Line 68 in this file (the foreach loop)
 */
 #endregion
-
+//the length of the array is 2, 0, 1, the first is changed. The array takes string variables ad is called stringArr
+//this can be seen by its syntax
 #region Arrays
 string[] stringArr = new string[2];
 Console.WriteLine("Length of string array is = " + stringArr.Length);
 stringArr[0] = "I'm the first string in the array";
 stringArr[1] = "I'm the second string in the array";
 stringArr[1] = "The first string have now been changed to this!";
-//Console.WriteLine(stringArr[1]);
-//Array.Resize(ref stringArr, 10);
+//The strng in the 1st position is writtes:
+Console.WriteLine(stringArr[1]);
+//The array is made longer
+Array.Resize(ref stringArr, 10);
+
+
+//New array "intArr" with a length of 5.
 
 
 int[] intArr = new int[5];
@@ -60,11 +65,11 @@ do{
     numbers[--counter]++;
 }while(counter > 0);
 
-
+// calls i in the array which increases by incrementing
 for(int i = 0; i < 10; i++){
     numbers[i] += 1;
 }
-
+//In the parentheses the dataype is described, and the name of a variable in an array
 foreach(int number in numbers){
     Console.WriteLine(number);
 }
