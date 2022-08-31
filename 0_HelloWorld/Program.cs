@@ -18,6 +18,35 @@ static void respondToDialog(string textForResponse, ConsoleColor colorOfAmongus)
 
 //to further simplify this code it would be possible to create a class for each amongus, with a nested function. This would mean that we would be able to call on that funtion eithin an instance of that class.
 //A good use for this might be  if we had more variation in the foreground color. due to the shortnes and the above mentioned, this will not be done.
+/*
+class Person
+{
+    ConsoleColor foregroundColor;
+    ConsoleColor backgroundColor;
+
+    Person(ConsoleColor foregroundColor, ConsoleColor backgroundColor)
+    {
+        this.foregroundColor = foregroundColor;
+        this.backgroundColor = backgroundColor;
+    }
+
+    void say(string whatToSay)
+    {
+        Console.ForegroundColor = foregroundColor;
+        Console.BackgroundColor = backgroundColor;
+        Console.WriteLine(whatToSay);
+    }
+
+    static void Main(string[] args)
+    {
+        Person person1 = new Person(ConsoleColor.White, ConsoleColor.Gray);
+        Person person2 = new Person(ConsoleColor.Green, ConsoleColor.Gray);
+        person2.say("i am person 2");
+        person1.say("bhhbhb");
+    }
+}
+
+*/
 Console.ForegroundColor = ConsoleColor.Red;
 Console.BackgroundColor = ConsoleColor.White;
 Console.WriteLine("EMERGENCY MEETING");
