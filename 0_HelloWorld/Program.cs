@@ -134,4 +134,4 @@ else
     Console.WriteLine("YOU were ejected");
 }
 Console.ReadLine();
-//test af andet, ikke vigtigt her
+//test af andet, ikke vigtigt herd
