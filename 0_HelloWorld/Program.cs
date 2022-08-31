@@ -1,31 +1,36 @@
 ﻿//DRY: Don't Repeat Yourself. To make thi text-based adventure a lot of the code will be similar. This could be made into a function, however it will nto seeing as it would reduce nothing replacing a line to save another one or maybe two.
 /*
 To this end i made a function which print dialoge with a specific bacground color, however it was not implemented:
+/*
 static void respondToDialog(string textForResponse, ConsoleColor colorOfAmongus)
 {
     //i wish to make it so that the console color is selected by the input of the 2nd parameter:
     Console.BackgroundColor = colorOfAmongus;
     Console.WriteLine(textForResponse);
 }
-respondToDialog("dsdsd0", ConsoleColor.DarkRed);
-
 */
+static void respondToDialog(string textForResponse, ConsoleColor colorOfAmongus)
+{
+    //i wish to make it so that the console color is selected by the input of the 2nd parameter:
+    Console.BackgroundColor = colorOfAmongus;
+    Console.WriteLine(textForResponse);
+}
+
+//to further simplify this code it would be possible to create a class for each amongus, with a nested function. This would mean that we would be able to call on that funtion eithin an instance of that class.
+//A good use for this might be  if we had more variation in the foreground color. due to the shortnes and the above mentioned, this will not be done.
 Console.ForegroundColor = ConsoleColor.Red;
 Console.BackgroundColor = ConsoleColor.White;
 Console.WriteLine("EMERGENCY MEETING");
 Console.ForegroundColor = ConsoleColor.White;
-Console.BackgroundColor = ConsoleColor.Green;
-Console.WriteLine("Why did you press the button?");
-Console.ForegroundColor = ConsoleColor.White;
+respondToDialog("Why did you press the button?", ConsoleColor.Green);
 Console.BackgroundColor = ConsoleColor.DarkBlue;
 string answerSus = "hello world";
 answerSus = Console.ReadLine();
-Console.ForegroundColor = ConsoleColor.White;
-Console.BackgroundColor = ConsoleColor.Green;
-Console.WriteLine(
-    "'" + answerSus + "'" + " is not a good excuse kind of sus, you might be the mongster!"
+respondToDialog(
+    "'" + answerSus + "'" + " is not a good excuse kind of sus, you might be the mongster!",
+    ConsoleColor.Green
 );
-Console.WriteLine("Are you?");
+respondToDialog("Are you?", ConsoleColor.Green);
 Console.ForegroundColor = ConsoleColor.White;
 Console.BackgroundColor = ConsoleColor.DarkBlue;
 answerSus = Console.ReadLine();
@@ -38,18 +43,14 @@ if (answerSus == "yes")
         timeForResponse = random.Next(250, 1000);
         Thread.CurrentThread.IsBackground = true;
         await Task.Delay(timeForResponse);
-        Console.ForegroundColor = ConsoleColor.White;
-        Console.BackgroundColor = ConsoleColor.Green;
-        Console.WriteLine("Kinda sus, ngl");
+        respondToDialog("Kinda sus, ngl", ConsoleColor.Green);
     }).Start();
     new Thread(async () =>
     {
         timeForResponse = random.Next(250, 1000);
         Thread.CurrentThread.IsBackground = true;
         await Task.Delay(timeForResponse);
-        Console.ForegroundColor = ConsoleColor.White;
-        Console.BackgroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("He is amongus");
+        respondToDialog("He is amongus", ConsoleColor.Cyan);
     }).Start();
     await Task.Delay(2000);
     Console.ForegroundColor = ConsoleColor.White;
@@ -75,12 +76,9 @@ else
     new Thread(async () =>
     {
         timeForResponse = random.Next(250, 1000);
-
         Thread.CurrentThread.IsBackground = true;
         await Task.Delay(timeForResponse);
-        Console.ForegroundColor = ConsoleColor.White;
-        Console.BackgroundColor = ConsoleColor.Green;
-        Console.WriteLine("That is what you would say as the mongster!");
+        respondToDialog("That is what you would say as the mongster!", ConsoleColor.Green);
     }).Start();
     new Thread(async () =>
     {
@@ -89,7 +87,7 @@ else
         await Task.Delay(timeForResponse);
         Console.ForegroundColor = ConsoleColor.White;
         Console.BackgroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("He is amongus");
+        respondToDialog("He is amongus", ConsoleColor.Cyan);
     }).Start();
     await Task.Delay(2000);
     Console.ForegroundColor = ConsoleColor.White;
